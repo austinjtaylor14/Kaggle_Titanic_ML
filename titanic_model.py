@@ -3,7 +3,7 @@
 """
 Created on Sun Apr  9 12:12:34 2017
 
-@author: Austin
+@author: Austin Taylor
 """
 
 # Imports
@@ -32,3 +32,5 @@ df_training_data[numeric_cols].head()
 titanic_model = RandomForestRegressor(n_estimators=100, oob_score=True, random_state=42)
 titanic_model.fit(df_training_data[numeric_cols], df_training_survived)
 titanic_model.oob_score_
+# 0.1361695005913669
+
