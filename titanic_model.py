@@ -22,3 +22,8 @@ df_training_data['Age'].fillna(df_training_data.Age.mean(), inplace = True)
 # Get non-object columns and subset original data
 numeric_cols = [index for index, dtype in df_training_data.dtypes.iteritems() if dtype != 'object']
 df_training_data[numeric_cols].head()
+
+
+# Making our model
+titanic_model = RandomForestRegressor(n_estimators=100, oob_score=True, random_state=42)
+titanic_model.fit(df_training_data[numeric_cols], df_training_data)
